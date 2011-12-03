@@ -53,6 +53,7 @@ public class SandboxTest {
 		try {
 			final Sandbox s = new Sandbox();
 			s.useResource("doesnt_exist.txt");
+			fail("Expected RuntimeException");
 		} catch (final NullPointerException e) {
 			fail("Should not throw NullPointerException");
 		} catch (final RuntimeException e) {
