@@ -37,6 +37,16 @@ public class SandboxTest {
 		assertThat(s2.getRoot(), isEmptyDirectory());
 	}
 
+	@Test
+	public void testCreateFilesFromResources() throws Exception {
+		final Sandbox s = new Sandbox();
+		s.useResource("file_in_jar.txt");
+
+		final String fileContents = FileUtils.readFileToString(s
+				.newFile("file_in_jar.txt"));
+		assertThat(fileContents, is("MAGIC NUMBER 3849"));
+	}
+
 	private Matcher<? super File> isEmptyDirectory() {
 		return new TypeSafeMatcher<File>() {
 

@@ -2,6 +2,9 @@ package net.avh4.util.sandbox;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
+
+import org.apache.commons.io.FileUtils;
 
 public class Sandbox {
 
@@ -39,6 +42,17 @@ public class Sandbox {
 		}
 
 		return (temp);
+	}
+
+	public void useResource(final String name) {
+		final File file = new File(root, name);
+		try {
+			final URL source = ClassLoader.getSystemResource(name);
+			FileUtils.copyURLToFile(source, file);
+		} catch (final IOException e) {
+			throw new RuntimeException(
+					"Unable to load resource '" + name + "'", e);
+		}
 	}
 
 }
