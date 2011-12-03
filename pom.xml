@@ -2,14 +2,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>{{ package }}</groupId>
-  <artifactId>{{ project }}</artifactId>
+  <groupId>net.avh4.util</groupId>
+  <artifactId>sandbox</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>{{ project }}</name>
+  <name>sandbox</name>
   <description></description>
-  <url>{{ project_url }}</url>
+  <url></url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -33,8 +33,8 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>{{ package }}.Main</mainClass>
-              <packageName>{{ package }}</packageName>
+              <mainClass>net.avh4.util.Main</mainClass>
+              <packageName>net.avh4.util</packageName>
             </manifest>
           </archive>
         </configuration>
