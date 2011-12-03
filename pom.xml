@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.sonatype.oss</groupId>
+    <artifactId>oss-parent</artifactId>
+    <version>7</version>
+  </parent>
 
   <groupId>net.avh4.util</groupId>
   <artifactId>sandbox</artifactId>
@@ -8,8 +13,29 @@
   <packaging>jar</packaging>
 
   <name>sandbox</name>
-  <description></description>
-  <url></url>
+  <description />
+  <url>https://github.com/avh4/sandbox</url>
+  <licenses>
+    <license>
+      <name>The GNU General Public License v3.0</name>
+      <url>http://www.gnu.org/copyleft/gpl.html</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <scm>
+    <connection>scm:git:https://github.com/avh4/sandbox.git</connection>
+    <developerConnection>scm:git:git@github.com:avh4/sandbox.git</developerConnection>
+    <url>https://github.com/avh4/sandbox</url>
+  </scm>
+
+  <developers>
+    <developer>
+      <id>avh4</id>
+      <name>Aaron VonderHaar</name>
+      <email>gruen0aermel@gmail.com</email>
+    </developer>
+  </developers>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -62,11 +88,6 @@
       <artifactId>jbehave-core</artifactId>
       <scope>test</scope>
     </dependency>
-    <dependency>
-      <groupId>net.avh4.util</groupId>
-      <artifactId>imagecomparison</artifactId>
-      <scope>test</scope>
-    </dependency>
   </dependencies>
 
   <dependencyManagement>
@@ -100,11 +121,6 @@
         <groupId>org.jbehave</groupId>
         <artifactId>jbehave-core</artifactId>
         <version>3.5</version>
-      </dependency>
-      <dependency>
-        <groupId>net.avh4.util</groupId>
-        <artifactId>imagecomparison</artifactId>
-        <version>0.0.4-SNAPSHOT</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
