@@ -3,6 +3,7 @@ package net.avh4.util.sandbox;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.Assert.fail;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -45,6 +46,18 @@ public class SandboxTest {
 		final String fileContents = FileUtils.readFileToString(s
 				.newFile("file_in_jar.txt"));
 		assertThat(fileContents, is("MAGIC NUMBER 3849"));
+	}
+
+	@Test
+	public void testCorrectErrorMessageWhenResourceDoesntExist() {
+		try {
+			final Sandbox s = new Sandbox();
+			s.useResource("doesnt_exist.txt");
+		} catch (final NullPointerException e) {
+			fail("Should not throw NullPointerException");
+		} catch (final RuntimeException e) {
+			// pass
+		}
 	}
 
 	private Matcher<? super File> isEmptyDirectory() {

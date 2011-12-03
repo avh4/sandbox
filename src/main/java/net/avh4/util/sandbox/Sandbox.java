@@ -48,6 +48,10 @@ public class Sandbox {
 		final File file = new File(root, name);
 		try {
 			final URL source = ClassLoader.getSystemResource(name);
+			if (source == null) {
+				throw new RuntimeException("Unable to load resource '" + name
+						+ "'");
+			}
 			FileUtils.copyURLToFile(source, file);
 		} catch (final IOException e) {
 			throw new RuntimeException(
