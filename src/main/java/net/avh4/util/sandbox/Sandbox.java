@@ -47,7 +47,7 @@ public class Sandbox {
 	public void useResource(final String name) {
 		final File file = new File(root, name);
 		try {
-			final URL source = ClassLoader.getSystemResource(name);
+			final URL source = Sandbox.class.getResource("/" + name);
 			if (source == null) {
 				throw new RuntimeException("Unable to load resource '" + name
 						+ "'");
@@ -58,5 +58,4 @@ public class Sandbox {
 					"Unable to load resource '" + name + "'", e);
 		}
 	}
-
 }
